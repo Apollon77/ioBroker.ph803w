@@ -1,0 +1,98 @@
+{
+    "common": {
+        "name": "ph803w",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "titleLang": {
+            "en": "PH803-W PH and Redox",
+            "de": "PH803-W PH und Redox",
+            "ru": "PH803-W PH и окислительно-восстановительный потенциал",
+            "pt": "PH803-W PH e Redox",
+            "nl": "PH803-W PH en Redox",
+            "fr": "PH803-W PH et Redox",
+            "it": "PH803-W PH e Redox",
+            "es": "PH803-W PH y Redox",
+            "pl": "PH803-W PH i Redox",
+            "zh-cn": "PH803-W PH和氧化还原"
+        },
+        "desc": {
+            "en": "Query PH and Redox values from a PH803-W device",
+            "de": "Fragen Sie PH- und Redoxwerte von einem PH803-W-Gerät ab",
+            "ru": "Запросить значения pH и окислительно-восстановительного потенциала с устройства PH803-W",
+            "pt": "Consultar valores de PH e Redox de um dispositivo PH803-W",
+            "nl": "Vraag PH- en Redox-waarden op van een PH803-W-apparaat",
+            "fr": "Interroger les valeurs PH et Redox d'un appareil PH803-W",
+            "it": "Interroga i valori PH e Redox da un dispositivo PH803-W",
+            "es": "Consultar valores de PH y Redox desde un dispositivo PH803-W",
+            "pl": "Zapytanie o wartości PH i Redox z urządzenia PH803-W",
+            "zh-cn": "从PH803-W设备查询PH和Redox值"
+        },
+        "authors": [
+            "Ingo Fischer <github@fischer-ka.de>"
+        ],
+        "keywords": [
+            "ph",
+            "chlor",
+            "redox",
+            "ph803-w"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "icon": "ph803w.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/Apollon77/ioBroker.ph803w/master/admin/ph803w.png",
+        "readme": "https://github.com/Apollon77/ioBroker.ph803w/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "metering",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
+    },
+    "native": {
+        "polling_interval": "60"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}

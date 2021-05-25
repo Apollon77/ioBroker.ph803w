@@ -1,0 +1,48 @@
+{
+    "expert": "yes",
+    "cli": false,
+    "adapterName": "ph803w",
+    "title": "PH803-W PH and Redox",
+    "description": "Query PH and Redox values from a PH803-W device",
+    "keywords": [
+        "ph",
+        "chlor",
+        "redox",
+        "ph803-w"
+    ],
+    "contributors": "",
+    "authorName": "Ingo Fischer",
+    "authorGithub": "Apollon77",
+    "authorEmail": "github@fischer-ka.de",
+    "features": [
+        "adapter"
+    ],
+    "adminFeatures": [],
+    "type": "metering",
+    "startMode": "daemon",
+    "connectionType": "local",
+    "dataSource": "poll",
+    "connectionIndicator": "yes",
+    "adapterSettings": [
+        {
+            "key": "polling_interval",
+            "label": "Data polling interval (s)",
+            "inputType": "number",
+            "defaultValue": "60"
+        }
+    ],
+    "language": "JavaScript",
+    "adminReact": "no",
+    "indentation": "Space (4)",
+    "quotes": "single",
+    "es6class": "yes",
+    "tools": [
+        "ESLint",
+        "type checking"
+    ],
+    "gitRemoteProtocol": "HTTPS",
+    "license": "MIT License",
+    "ci": "gh-actions",
+    "dependabot": "yes",
+    "creatorVersion": "1.33.0"
+}
