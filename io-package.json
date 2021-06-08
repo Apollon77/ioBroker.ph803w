@@ -60,16 +60,20 @@
         "type": "metering",
         "compact": true,
         "connectionType": "local",
-        "dataSource": "poll",
+        "dataSource": "push",
         "materialize": true,
         "dependencies": [
             {
-                "js-controller": ">=2.0.0"
+                "js-controller": ">=3.1.0"
             }
-        ]
+        ],
+        "plugins": {
+            "sentry": {
+                "dsn": "https://fd622d4814134857be33348981e98c4e@sentry.iobroker.net/132"
+            }
+        }
     },
     "native": {
-        "polling_interval": "60"
     },
     "objects": [],
     "instanceObjects": [

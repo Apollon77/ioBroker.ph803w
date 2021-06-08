@@ -1,102 +1,38 @@
 ![Logo](admin/ph803w.png)
 # ioBroker.ph803w
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.ph803w.svg)](https://www.npmjs.com/package/iobroker.ph803w)
+![Number of Installations](http://iobroker.live/badges/ph803w-installed.svg)
+![Number of Installations](http://iobroker.live/badges/ph803w-stable.svg)
+[![NPM version](http://img.shields.io/npm/v/iobroker.ph803w.svg)](https://www.npmjs.com/package/iobroker.ph803w)
+
+![Test and Release](https://github.com/Apollon77/iobroker.ph803w/workflows/Test%20and%20Release/badge.svg)
+[![Translation status](https://weblate.iobroker.net/widgets/adapters/-/ph803w/svg-badge.svg)](https://weblate.iobroker.net/engage/adapters/?utm_source=widget)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.ph803w.svg)](https://www.npmjs.com/package/iobroker.ph803w)
-![Number of Installations (latest)](https://iobroker.live/badges/ph803w-installed.svg)
-![Number of Installations (stable)](https://iobroker.live/badges/ph803w-stable.svg)
-[![Dependency Status](https://img.shields.io/david/Apollon77/iobroker.ph803w.svg)](https://david-dm.org/Apollon77/iobroker.ph803w)
-
-[![NPM](https://nodei.co/npm/iobroker.ph803w.png?downloads=true)](https://nodei.co/npm/iobroker.ph803w/)
-
-**Tests:** ![Test and Release](https://github.com/Apollon77/ioBroker.ph803w/workflows/Test%20and%20Release/badge.svg)
 
 ## ph803w adapter for ioBroker
 
-Query PH and Redox values from a PH803-W device
+**This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information how to disable the error reporting see [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is used starting with js-controller 3.0.
 
-## Developer manual
-This section is intended for the developer. It can be deleted later
+Query PH and Redox values from PH803-W devices in your network.
 
-### Getting started
+## Configuration
+The adapter do not need any configuration. It will automatically discover PH803W devices via UDP packages in your network. This means that
 
-You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.ph803w`
-1. Initialize the current folder as a new git repository:  
-    ```bash
-    git init
-    git add .
-    git commit -m "Initial commit"
-    ```
-1. Link your local repository with the one on GitHub:  
-    ```bash
-    git remote add origin https://github.com/Apollon77/ioBroker.ph803w
-    ```
+## Todo
+* enhance testing: state checks and setState's
+* if needed allow to specify the local network interface to listen for UDP packages
+* if needed allow adding own devices by IP if discovery is not working
 
-1. Push all files to the GitHub repo:  
-    ```bash
-    git push origin master
-    ```
-1. Add a new secret under https://github.com/Apollon77/ioBroker.ph803w/settings/secrets. It must be named `AUTO_MERGE_TOKEN` and contain a personal access token with push access to the repository, e.g. yours. You can create a new token under https://github.com/settings/tokens.
+## How to report issues and feature requests
 
-1. Head over to [main.js](main.js) and start programming!
+Please use GitHub issues for this.
 
-### Best Practices
-We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
-check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
-
-### Scripts in `package.json`
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description |
-|-------------|-------------|
-| `test:js` | Executes the tests you defined in `*.test.js` files. |
-| `test:package` | Ensures your `package.json` and `io-package.json` are valid. |
-| `test:unit` | Tests the adapter startup with unit tests (fast, but might require module mocks to work). |
-| `test:integration` | Tests the adapter startup with an actual instance of ioBroker. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `check` | Performs a type-check on your code (without compiling anything). |
-| `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
-
-### Writing tests
-When done right, testing code is invaluable, because it gives you the 
-confidence to change your code while knowing exactly if and when 
-something breaks. A good read on the topic of test-driven development 
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
-Although writing tests before the code might seem strange at first, but it has very 
-clear upsides.
-
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
-
-### Publishing the adapter
-Since you have chosen GitHub Actions as your CI service, you can 
-enable automatic releases on npm whenever you push a new git tag that matches the form 
-`v<major>.<minor>.<patch>`. The necessary steps are described in `.github/workflows/test-and-release.yml`.
-
-To get your adapter released in ioBroker, please refer to the documentation 
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
-
-### Test the adapter manually on a local ioBroker installation
-In order to install the adapter locally without publishing, the following steps are recommended:
-1. Create a tarball from your dev directory:  
-    ```bash
-    npm pack
-    ```
-1. Upload the resulting file to your ioBroker host
-1. Install it locally (The paths are different on Windows):
-    ```bash
-    cd /opt/iobroker
-    npm i /path/to/tarball.tgz
-    ```
-
-For later updates, the above procedure is not necessary. Just do the following:
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.ph803w`)
-1. Execute `iobroker upload ph803w` on the ioBroker host
+Best is to set the adapter to Debug log mode (Instances -> Expert mode -> Column Log level). Then please get the logfile from disk (subdirectory "log" in ioBroker installation directory and not from Admin because Admin cuts the lines). If you do not like providing it in GitHub issue you can also send it to me via email (iobroker@fischer-ka.de). Please add a reference to the relevant GitHub issue AND also describe what I see in the log at which time.
 
 ## Changelog
 
-### 0.0.1
-* (Ingo Fischer) initial release
+### __WORK IN PROGRESS__
+* (Apollon77) Initial commit
 
 ## License
 MIT License
