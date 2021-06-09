@@ -34,7 +34,8 @@ Best is to set the adapter to Debug log mode (Instances -> Expert mode -> Column
 ## Changelog
 
 ### __WORK IN PROGRESS__
-* (Apollon77) Optimize edge cases on device connection and try reconnect
+* (Apollon77) Optimize edge cases on device connection and try reconnect and make sure connection status is correct
+* (Apollon77) Better handle pingpong related reconnects
 
 ### 0.1.4 (2021-06-09)
 * (Apollon77) Remove unit from PH again after feedback
