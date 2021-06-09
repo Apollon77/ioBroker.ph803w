@@ -33,7 +33,7 @@ Best is to set the adapter to Debug log mode (Instances -> Expert mode -> Column
 
 ## Changelog
 
-### __WORK IN PROGRESS__
+### 0.1.4 (2021-06-09)
 * (Apollon77) Remove unit from PH again after feedback
 
 ### 0.1.3 (2021-06-09)

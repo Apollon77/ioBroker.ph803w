@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "ph803w",
-        "version": "0.1.3",
+        "version": "0.1.4",
         "news": {
+            "0.1.4": {
+                "en": "Remove unit from PH again after feedback",
+                "de": "Gerät nach Rückmeldung wieder vom PH entfernen",
+                "ru": "Удалите устройство из PH снова после обратной связи",
+                "pt": "Remova a unidade do PH novamente após o feedback",
+                "nl": "Apparaat weer uit PH verwijderen na feedback",
+                "fr": "Retirez à nouveau l'unité de PH après la rétroaction",
+                "it": "Rimuovere di nuovo l'unità da PH dopo il feedback",
+                "es": "Retire la unidad de PH nuevamente después de recibir comentarios",
+                "pl": "Usuń jednostkę z PH ponownie po otrzymaniu informacji zwrotnej",
+                "zh-cn": "反馈后再次从 PH 中移除装置"
+            },
             "0.1.3": {
                 "en": "Add title property",
                 "de": "Titeleigenschaft hinzufügen",
