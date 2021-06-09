@@ -24,7 +24,7 @@ const deviceObjects = {
             name: 'PH Value',
             type: 'number',
             role: 'value',
-            unit: 'mol/l',
+            unit: '',
             read: true,
             write: false
         }
