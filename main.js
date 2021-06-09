@@ -145,12 +145,18 @@ class Ph803w extends utils.Adapter {
         let deviceConnected = false;
         this.devices[device.ip].on('connected', async () => {
             deviceConnected = true;
-            this.connectedDeviceCount++;
 
             this.log.info(`Connected PH803W device ${device.id} on IP ${device.ip} ... logging in ...`);
-            await this.devices[device.ip].login();
-            await this.devices[device.ip].retrieveData();
+            try {
+                await this.devices[device.ip].login();
+                await this.devices[device.ip].retrieveData();
+            } catch (err) {
+                this.log.info(`Connection process for PH803W device ${device.id} on IP ${device.ip} was not successful: ${err}`);
+                await this.devices[device.ip].close(true);
+                return;
+            }
 
+            this.connectedDeviceCount++;
             this.setConnected(this.connectedDeviceCount === Object.keys(this.devices).length);
         });
         this.devices[device.ip].on('disconnected', () => {
