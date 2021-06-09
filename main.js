@@ -126,6 +126,8 @@ class Ph803w extends utils.Adapter {
     async initDevice(device) {
         if (this.devices[device.ip]) return;
 
+        this.devices[device.ip] = new PH803WDevice(device.ip);
+
         const options = {preserve: {common: ['name']}};
 
         await this.extendObjectAsync(device.id, {
@@ -139,8 +141,6 @@ class Ph803w extends utils.Adapter {
         for (const obj in deviceObjects) {
             await this.extendObjectAsync(device.id + '.' + obj, deviceObjects[obj], options);
         }
-
-        this.devices[device.ip] = new PH803WDevice(device.ip);
 
         let deviceConnected = false;
         this.devices[device.ip].on('connected', async () => {
