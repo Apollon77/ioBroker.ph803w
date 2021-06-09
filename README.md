@@ -16,12 +16,14 @@
 Query PH and Redox values from PH803-W devices in your network.
 
 ## Configuration
-The adapter do not need any configuration. It will automatically discover PH803W devices via UDP packages in your network. This means that
+The adapter do not need any configuration. It will automatically discover PH803W devices via UDP packages in your network. This means that the ioBroekr server and the device needs to be in the same network.
+Discovery is done on adapter start which means that to discover new devices added while adapter is running might need an adapter restart.
 
 ## Todo
 * enhance testing: state checks and setState's
 * if needed allow to specify the local network interface to listen for UDP packages
 * if needed allow adding own devices by IP if discovery is not working
+* if needed add a state to send out another discovery package during run of the adapter to allow discovery of new devices without adapter restart
 
 ## How to report issues and feature requests
 
