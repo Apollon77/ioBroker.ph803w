@@ -104,13 +104,13 @@ class Ph803w extends utils.Adapter {
         this.discoveryServer = new PH803WDiscovery();
         this.discoveryServer.on('error', err => this.log.info(`PH803W discovery Error: ${err}`));
 
-        this.discoveryServer.on('device', data => {
+        this.discoveryServer.on('device', async data => {
             if (this.devices[data.ip]) {
                 this.log.debug(`Discovered PH803W device ${data.id} on IP ${data.ip} already known, ignore`);
                 return;
             }
             this.log.info(`PH803W Device ${data.id} discovered on ${data.ip}`);
-            this.initDevice(data);
+            await this.initDevice(data);
         });
 
         this.discoveryServer.discover();
@@ -126,6 +126,7 @@ class Ph803w extends utils.Adapter {
     async initDevice(device) {
         if (this.devices[device.ip]) return;
 
+        this.log.debug(`Start PH803W Device initialization for ${device.id} on IP ${device.ip}`);
         this.devices[device.ip] = new PH803WDevice(device.ip);
 
         const options = {preserve: {common: ['name']}};
@@ -157,20 +158,22 @@ class Ph803w extends utils.Adapter {
             }
 
             this.connectedDeviceCount++;
+            this.log.debug(`Initialization for PH803W device ${device.id} on IP ${device.ip} done (${this.connectedDeviceCount}/${Object.keys(this.devices).length})`);
             this.setConnected(this.connectedDeviceCount === Object.keys(this.devices).length);
         });
         this.devices[device.ip].on('disconnected', () => {
             if (deviceConnected) {
                 deviceConnected = false;
-                this.log.info(`Disconnected PH803W device ${device.id} on IP ${device.ip}`);
                 this.connectedDeviceCount--;
+                this.log.info(`Disconnected PH803W device ${device.id} on IP ${device.ip} (${this.connectedDeviceCount}/${Object.keys(this.devices).length})`);
                 this.setConnected(false);
             }
         });
 
-        this.devices[device.ip].on('error', err => this.log.error(`PH803W device ${device.id} Error: ${err}`));
+        this.devices[device.ip].on('error', err => this.log.info(`PH803W device ${device.id} Error: ${err}`));
 
         this.devices[device.ip].on('data', data => {
+            this.log.debug(`Data received for PH803W device ${device.id}: ${JSON.stringify(data)}`);
             this.setState(device.id + '.ph.value', data.ph, true);
             this.setState(device.id + '.ph.outlet', data.phOutlet, true);
             this.setState(device.id + '.redox.value', data.redox, true);
