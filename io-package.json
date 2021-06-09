@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "ph803w",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "news": {
+            "0.1.3": {
+                "en": "Add title property",
+                "de": "Titeleigenschaft hinzufügen",
+                "ru": "Добавить свойство заголовка",
+                "pt": "Adicionar propriedade de título",
+                "nl": "Titeleigenschap toevoegen",
+                "fr": "Ajouter une propriété de titre",
+                "it": "Aggiungi proprietà titolo",
+                "es": "Agregar propiedad de título",
+                "pl": "Dodaj właściwość tytułu",
+                "zh-cn": "添加标题属性"
+            },
             "0.1.2": {
                 "en": "Add unit for PH value",
                 "de": "Einheit für PH-Wert hinzufügen",
