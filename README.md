@@ -33,6 +33,9 @@ Best is to set the adapter to Debug log mode (Instances -> Expert mode -> Column
 
 ## Changelog
 
+### __WORk IN PROGRESS__
+* (Apollon77) Add title property
+
 ### 0.1.2 (2021-06-09)
 * (Apollon77) Add unit for PH value
 
