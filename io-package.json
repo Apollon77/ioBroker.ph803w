@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "ph803w",
-        "version": "0.1.4",
+        "version": "0.1.5",
         "news": {
+            "0.1.5": {
+                "en": "Optimize edge cases on device connection and try reconnect and make sure connection status is correct\nBetter handle pingpong related reconnects",
+                "de": "Optimieren Sie Randfälle bei der Geräteverbindung und versuchen Sie, die Verbindung erneut herzustellen und sicherzustellen, dass der Verbindungsstatus korrekt ist status\nPingpong-bezogene Reconnects besser handhaben",
+                "ru": "Оптимизируйте крайние случаи при подключении устройства и попробуйте повторно подключиться и убедитесь, что статус подключения правильный.\nЛучше обрабатывать переподключения, связанные с пинг-понгом",
+                "pt": "Otimize casos extremos na conexão do dispositivo e tente reconectar e certifique-se de que o status da conexão esteja correto\nMelhor lidar com reconexões relacionadas ao pingpong",
+                "nl": "Optimaliseer edge-cases bij apparaatverbinding en probeer opnieuw verbinding te maken en zorg ervoor dat de verbindingsstatus correct is\nBeter omgaan met pingpong-gerelateerde herverbindingen",
+                "fr": "Optimisez les cas de bord sur la connexion de l'appareil et essayez de vous reconnecter et assurez-vous que l'état de la connexion est correct\nMieux gérer les reconnexions liées au ping-pong",
+                "it": "Ottimizza i casi limite sulla connessione del dispositivo e prova a riconnetterti e assicurati che lo stato della connessione sia corretto\nGestire meglio le riconnessioni relative al pingpong",
+                "es": "Optimice los casos extremos en la conexión del dispositivo e intente volver a conectarse y asegúrese de que el estado de la conexión sea correcto\nManejar mejor las reconexiones relacionadas con pingpong",
+                "pl": "Zoptymalizuj przypadki brzegowe na połączeniu urządzenia i spróbuj połączyć się ponownie, aby upewnić się, że stan połączenia jest poprawny\nLepsza obsługa ponownych połączeń związanych z pingpong",
+                "zh-cn": "优化设备连接的边缘情况并尝试重新连接并确保连接状态正确\n更好地处理与乒乓相关的重新连接"
+            },
             "0.1.4": {
                 "en": "Remove unit from PH again after feedback",
                 "de": "Gerät nach Rückmeldung wieder vom PH entfernen",

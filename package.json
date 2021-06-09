@@ -1,6 +1,6 @@
 {
   "name": "iobroker.ph803w",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Query PH and Redox values from a PH803-W device",
   "author": {
     "name": "Ingo Fischer",
