@@ -121,6 +121,7 @@
         "type": "metering",
         "compact": true,
         "connectionType": "local",
+        "tier": 2,
         "dataSource": "push",
         "materialize": true,
         "dependencies": [
