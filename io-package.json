@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "ph803w",
-        "version": "0.1.5",
+        "version": "1.0.0",
         "news": {
+            "1.0.0": {
+                "en": "Declare adapter as stable, so lets do a 1.0\nAdd tier for js-controller 3.3",
+                "de": "Deklarieren Sie den Adapter als stabil, also machen wir einen 1.0\nStufe für js-controller 3.3 . hinzufügen",
+                "ru": "Объявите адаптер как стабильный, давайте сделаем 1.0\nДобавить уровень для js-controller 3.3",
+                "pt": "Declare o adaptador como estável, então vamos fazer um 1.0\nAdicionar camada para js-controller 3.3",
+                "nl": "Verklaar de adapter als stabiel, dus laten we een 1.0 . doen\nLaag toevoegen voor js-controller 3.3",
+                "fr": "Déclarez l'adaptateur comme stable, alors faisons un 1.0\nAjouter un niveau pour js-controller 3.3",
+                "it": "Dichiara l'adattatore stabile, quindi eseguiamo un 1.0\nAggiungi livello per js-controller 3.3",
+                "es": "Declare el adaptador como estable, así que hagamos un 1.0\nAgregar nivel para js-controller 3.3",
+                "pl": "Zadeklaruj, że adapter jest stabilny, więc zróbmy 1,0\nDodaj warstwę dla kontrolera js 3.3",
+                "zh-cn": "声明适配器稳定，所以让我们做一个 1.0\n为 js-controller 3.3 添加层"
+            },
             "0.1.5": {
                 "en": "Optimize edge cases on device connection and try reconnect and make sure connection status is correct\nBetter handle pingpong related reconnects",
                 "de": "Optimieren Sie Randfälle bei der Geräteverbindung und versuchen Sie, die Verbindung erneut herzustellen und sicherzustellen, dass der Verbindungsstatus korrekt ist status\nPingpong-bezogene Reconnects besser handhaben",

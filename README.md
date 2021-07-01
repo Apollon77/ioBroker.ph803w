@@ -33,7 +33,7 @@ Best is to set the adapter to Debug log mode (Instances -> Expert mode -> Column
 
 ## Changelog
 
-### __WORK IN PROGRESS__
+### 1.0.0 (2021-07-01)
 * Declare adapter as stable, so lets do a 1.0
 * (Apollon77) Add tier for js-controller 3.3
 
