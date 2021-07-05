@@ -148,6 +148,7 @@ class Ph803w extends utils.Adapter {
             deviceConnected = true;
 
             this.log.info(`Connected PH803W device ${device.id} on IP ${device.ip} ... logging in ...`);
+            this.connectedDeviceCount++;
             try {
                 await this.devices[device.ip].login();
                 await this.devices[device.ip].retrieveData();
@@ -157,7 +158,6 @@ class Ph803w extends utils.Adapter {
                 return;
             }
 
-            this.connectedDeviceCount++;
             this.log.debug(`Initialization for PH803W device ${device.id} on IP ${device.ip} done (${this.connectedDeviceCount}/${Object.keys(this.devices).length})`);
             this.setConnected(this.connectedDeviceCount === Object.keys(this.devices).length);
         });
