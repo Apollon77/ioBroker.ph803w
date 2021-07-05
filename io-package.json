@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "ph803w",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "news": {
+            "1.0.1": {
+                "en": "Optimize connection status edge cases",
+                "de": "Optimieren Sie Randfälle des Verbindungsstatus",
+                "ru": "Оптимизация крайних случаев состояния подключения",
+                "pt": "Otimize casos extremos de status de conexão",
+                "nl": "Randgevallen van verbindingsstatus optimaliseren",
+                "fr": "Optimiser les cas extrêmes de statut de connexion",
+                "it": "Ottimizza i casi limite dello stato della connessione",
+                "es": "Optimización de casos extremos de estado de conexión",
+                "pl": "Zoptymalizuj przypadki brzegowe stanu połączenia",
+                "zh-cn": "优化连接状态边缘情况"
+            },
             "1.0.0": {
                 "en": "Declare adapter as stable, so lets do a 1.0\nAdd tier for js-controller 3.3",
                 "de": "Deklarieren Sie den Adapter als stabil, also machen wir einen 1.0\nStufe für js-controller 3.3 . hinzufügen",

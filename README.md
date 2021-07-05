@@ -33,7 +33,7 @@ Best is to set the adapter to Debug log mode (Instances -> Expert mode -> Column
 
 ## Changelog
 
-### __WORK IN PROGRESS__
+### 1.0.1 (2021-07-05)
 * (Apollon77) Optimize connection status edge cases
 
 ### 1.0.0 (2021-07-01)
