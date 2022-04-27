@@ -125,6 +125,10 @@ class Ph803w extends utils.Adapter {
 
     async initDevice(device) {
         if (this.devices[device.ip]) return;
+        if (!device.id) {
+            this.log.warn(`No ID for device ${device.ip}. Wait for next discovery message`);
+            return;
+        }
 
         this.log.debug(`Start PH803W Device initialization for ${device.id} on IP ${device.ip}`);
         this.devices[device.ip] = new PH803WDevice(device.ip);
