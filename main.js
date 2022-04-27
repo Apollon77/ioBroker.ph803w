@@ -93,7 +93,7 @@ class Ph803w extends utils.Adapter {
 
         const devices = await this.getDevicesAsync();
         if (devices && devices.length) {
-            this.log.debug('Init ' + devices.length + ' known devices without discovery ...');
+            this.log.debug(`Init ${devices.length} known devices without discovery ...`);
             for (const device of devices) {
                 if (device._id && device.native) {
                     await this.initDevice(device.native);
@@ -108,6 +108,10 @@ class Ph803w extends utils.Adapter {
             if (this.devices[data.ip]) {
                 this.log.debug(`Discovered PH803W device ${data.id} on IP ${data.ip} already known, ignore`);
                 return;
+            }
+            if (!data.id) {
+                this.log.info(`PH803W Device ${data.ip} has no ID, define one by ourself`);
+                data.id = `${data.ip.replace(/\./g, '')}-${Date.now()}`;
             }
             this.log.info(`PH803W Device ${data.id} discovered on ${data.ip}`);
             await this.initDevice(data);
@@ -138,13 +142,13 @@ class Ph803w extends utils.Adapter {
         await this.extendObjectAsync(device.id, {
             type: 'device',
             common: {
-                name: 'PH803W device ' + device.id,
+                name: `PH803W device ${device.id}`,
             },
             native: device,
         }, options);
 
         for (const obj in deviceObjects) {
-            await this.extendObjectAsync(device.id + '.' + obj, deviceObjects[obj], options);
+            await this.extendObjectAsync(`${device.id}.${obj}`, deviceObjects[obj], options);
         }
 
         let deviceConnected = false;
@@ -178,10 +182,10 @@ class Ph803w extends utils.Adapter {
 
         this.devices[device.ip].on('data', data => {
             this.log.debug(`Data received for PH803W device ${device.id}: ${JSON.stringify(data)}`);
-            this.setState(device.id + '.ph.value', data.ph, true);
-            this.setState(device.id + '.ph.outlet', data.phOutlet, true);
-            this.setState(device.id + '.redox.value', data.redox, true);
-            this.setState(device.id + '.redox.outlet', data.redoxOutlet, true);
+            this.setState(`${device.id}.ph.value`, data.ph, true);
+            this.setState(`${device.id}.ph.outlet`, data.phOutlet, true);
+            this.setState(`${device.id}.redox.value`, data.redox, true);
+            this.setState(`${device.id}.redox.outlet`, data.redoxOutlet, true);
         });
 
         await this.devices[device.ip].connect();
