@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "ph803w",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "news": {
+      "1.0.3": {
+        "en": "Make sure devices have an id when initializing them",
+        "de": "Stellen Sie sicher, dass Geräte beim Initialisieren eine ID haben",
+        "ru": "Убедитесь, что устройства имеют идентификатор при их инициализации",
+        "pt": "Certifique-se de que os dispositivos tenham um id ao inicializá-los",
+        "nl": "Zorg ervoor dat apparaten een id hebben wanneer ze worden geïnitialiseerd",
+        "fr": "Assurez-vous que les appareils ont un identifiant lors de leur initialisation",
+        "it": "Assicurati che i dispositivi dispongano di un ID durante l'inizializzazione",
+        "es": "Asegúrese de que los dispositivos tengan una identificación al inicializarlos",
+        "pl": "Upewnij się, że urządzenia mają identyfikator podczas ich inicjalizacji",
+        "zh-cn": "确保设备在初始化时有一个 id"
+      },
       "1.0.1": {
         "en": "Optimize connection status edge cases",
         "de": "Optimieren Sie Randfälle des Verbindungsstatus",
