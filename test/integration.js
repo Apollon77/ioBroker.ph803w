@@ -14,8 +14,13 @@ tests.integration(path.join(__dirname, '..'), {
 
     // Define your own tests inside defineAdditionalTests
     // Since the tests are heavily instrumented, you need to create and use a so called "harness" to control the tests.
-    defineAdditionalTests(getHarness) {
-        describe('PHP803W tests', () => {
+    defineAdditionalTests({ suite }) {
+        // All tests (it, describe) must be grouped in one or more suites. Each suite sets up a fresh environment for the adapter tests.
+        // At the beginning of each suite, the databases will be reset and the adapter will be started.
+        // The adapter will run until the end of each suite.
+
+        // Since the tests are heavily instrumented, each suite gives access to a so called "harness" to control the tests.
+        suite('PHP803W tests', (getHarness) => {
             it('States created and have values', () => {
                 return new Promise(async (resolve) => {
                     const server = new TestServer();
