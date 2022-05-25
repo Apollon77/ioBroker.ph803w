@@ -59,6 +59,16 @@ const deviceObjects = {
             read: true,
             write: true,
         }
+    },
+    'connected': {
+        type: 'state',
+        common: {
+            name: 'Connected',
+            type: 'boolean',
+            role: 'indicator.reachable',
+            read: true,
+            write: false
+        }
     }
 };
 
@@ -134,6 +144,18 @@ class Ph803w extends utils.Adapter {
             return;
         }
 
+        const knownIpForDevice = this.devices.find(dev => dev.id === device.id);
+        if (knownIpForDevice) {
+            if (knownIpForDevice.isConnected()) {
+                this.log.warn(`Device ${device.id} already known on ${knownIpForDevice.ip} and not connected. Overwrite!`);
+                knownIpForDevice.destroy();
+                delete this.devices[knownIpForDevice.ip];
+            } else {
+                this.log.warn(`Device ${device.id} already known on ${knownIpForDevice.ip}, but successfully connected. Ignore!`);
+                return;
+            }
+        }
+
         this.log.debug(`Start PH803W Device initialization for ${device.id} on IP ${device.ip}`);
         this.devices[device.ip] = new PH803WDevice(device.ip);
 
@@ -143,6 +165,9 @@ class Ph803w extends utils.Adapter {
             type: 'device',
             common: {
                 name: `PH803W device ${device.id}`,
+                statusStates: {
+                    onlineId: `${this.namespace}.${device.id}.connected`
+                }
             },
             native: device,
         }, options);
@@ -156,6 +181,7 @@ class Ph803w extends utils.Adapter {
             deviceConnected = true;
 
             this.log.info(`Connected PH803W device ${device.id} on IP ${device.ip} ... logging in ...`);
+            this.setState(`${device.id}.connected`, true, true);
             this.connectedDeviceCount++;
             try {
                 await this.devices[device.ip].login();
@@ -170,6 +196,7 @@ class Ph803w extends utils.Adapter {
             this.setConnected(this.connectedDeviceCount === Object.keys(this.devices).length);
         });
         this.devices[device.ip].on('disconnected', () => {
+            this.setState(`${device.id}.connected`, false, true);
             if (deviceConnected) {
                 deviceConnected = false;
                 this.connectedDeviceCount--;
@@ -188,7 +215,7 @@ class Ph803w extends utils.Adapter {
             this.setState(`${device.id}.redox.outlet`, data.redoxOutlet, true);
         });
 
-        await this.devices[device.ip].connect();
+        this.devices[device.ip].connect();
     }
 
     /**
