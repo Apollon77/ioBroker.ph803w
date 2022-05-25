@@ -29,29 +29,27 @@ tests.integration(path.join(__dirname, '..'), {
                     // Create a fresh harness instance each test!
                     const harness = getHarness();
                     // Start the adapter and wait until it has started
-                    await harness.startAdapterAndWait();
+                    await harness.startAdapterAndWait(true);
 
-                    harness.on('stateChange', async (id, state) => {
-                        if (id === 'ph803w.0.info.connection' && state && state.val === true) {
-                            expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY')).to.be.true;
-                            expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph')).to.be.true;
-                            expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph.value')).to.be.true;
-                            expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph.outlet')).to.be.true;
-                            expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox')).to.be.true;
-                            expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox.value')).to.be.true;
-                            expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox.outlet')).to.be.true;
+                    expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY')).to.be.true;
+                    expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph')).to.be.true;
+                    expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph.value')).to.be.true;
+                    expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph.outlet')).to.be.true;
+                    expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox')).to.be.true;
+                    expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox.value')).to.be.true;
+                    expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox.outlet')).to.be.true;
+                    expect(await harness.objects.objectExists('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.connected')).to.be.true;
 
-                            setTimeout(async () => {
-                                expect((await harness.states.getStateAsync('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph.value')).val).to.be.above(7);
-                                expect((await harness.states.getStateAsync('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox.value')).val).to.be.above(200);
-                                expect(typeof (await harness.states.getStateAsync('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox.outlet')).val).to.equal('boolean');
-                                expect(typeof (await harness.states.getStateAsync('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph.outlet')).val).to.equal('boolean');
+                    setTimeout(async () => {
+                        expect((await harness.states.getStateAsync('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph.value')).val).to.be.above(7);
+                        expect((await harness.states.getStateAsync('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox.value')).val).to.be.above(200);
+                        expect(typeof (await harness.states.getStateAsync('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.redox.outlet')).val).to.equal('boolean');
+                        expect(typeof (await harness.states.getStateAsync('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.ph.outlet')).val).to.equal('boolean');
+                        expect((await harness.states.getStateAsync('ph803w.0.CFqpJTSymCE9PLlp1DpbhY.connected')).val).to.be.true;
 
-                                await server.close();
-                                resolve(true);
-                            }, 2000);
-                        }
-                    });
+                        await server.close();
+                        resolve(true);
+                    }, 2000);
                 });
             }).timeout(5000);
         });

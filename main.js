@@ -144,8 +144,9 @@ class Ph803w extends utils.Adapter {
             return;
         }
 
-        const knownIpForDevice = this.devices.find(dev => dev.id === device.id);
-        if (knownIpForDevice) {
+        const knownIpForDeviceId = Object.keys(this.devices).find(devIp => this.devices[devIp].id === device.id);
+        if (knownIpForDeviceId) {
+            const knownIpForDevice = this.devices[knownIpForDeviceId];
             if (knownIpForDevice.isConnected()) {
                 this.log.warn(`Device ${device.id} already known on ${knownIpForDevice.ip} and not connected. Overwrite!`);
                 knownIpForDevice.destroy();
