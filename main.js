@@ -147,7 +147,7 @@ class Ph803w extends utils.Adapter {
         const knownIpForDeviceId = Object.keys(this.devices).find(devIp => this.devices[devIp].id === device.id);
         if (knownIpForDeviceId) {
             const knownIpForDevice = this.devices[knownIpForDeviceId];
-            if (knownIpForDevice.isConnected()) {
+            if (!knownIpForDevice.isConnected()) {
                 this.log.warn(`Device ${device.id} already known on ${knownIpForDevice.ip} and not connected. Overwrite!`);
                 knownIpForDevice.destroy();
                 delete this.devices[knownIpForDevice.ip];
@@ -159,6 +159,7 @@ class Ph803w extends utils.Adapter {
 
         this.log.debug(`Start PH803W Device initialization for ${device.id} on IP ${device.ip}`);
         this.devices[device.ip] = new PH803WDevice(device.ip);
+        this.devices[device.ip].id = device.id;
 
         const options = {preserve: {common: ['name']}};
 
@@ -206,7 +207,18 @@ class Ph803w extends utils.Adapter {
             }
         });
 
-        this.devices[device.ip].on('error', err => this.log.info(`PH803W device ${device.id} Error: ${err}`));
+        this.devices[device.ip].on('error', err => {
+            this.log.info(`PH803W device ${device.id} Error: ${err}`);
+            const otherIpForDeviceId = Object.keys(this.devices).find(devIp => this.devices[devIp].id === device.id && this.devices[devIp].ip !== device.ip);
+            if (otherIpForDeviceId) {
+                const otherIpForDevice = this.devices[otherIpForDeviceId];
+                if (otherIpForDevice.isConnected()) {
+                    this.log.warn(`Device ${device.id} already known on ${otherIpForDevice.ip} and connected. Ignore this old IP ${device.ip}!`);
+                    this.devices[device.ip].destroy();
+                    delete this.devices[device.ip];
+                }
+            }
+        });
 
         this.devices[device.ip].on('data', data => {
             this.log.debug(`Data received for PH803W device ${device.id}: ${JSON.stringify(data)}`);
