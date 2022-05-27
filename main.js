@@ -149,7 +149,7 @@ class Ph803w extends utils.Adapter {
             const knownIpForDevice = this.devices[knownIpForDeviceId];
             if (!knownIpForDevice.isConnected()) {
                 this.log.warn(`Device ${device.id} already known on ${knownIpForDevice.ip} and not connected. Overwrite!`);
-                knownIpForDevice.destroy();
+                await knownIpForDevice.destroy();
                 delete this.devices[knownIpForDevice.ip];
             } else {
                 this.log.warn(`Device ${device.id} already known on ${knownIpForDevice.ip}, but successfully connected. Ignore!`);
@@ -160,6 +160,7 @@ class Ph803w extends utils.Adapter {
         this.log.debug(`Start PH803W Device initialization for ${device.id} on IP ${device.ip}`);
         this.devices[device.ip] = new PH803WDevice(device.ip);
         this.devices[device.ip].id = device.id;
+        this.devices[device.ip].ip = device.ip;
 
         const options = {preserve: {common: ['name']}};
 
