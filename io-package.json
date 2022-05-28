@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "ph803w",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "news": {
+      "1.1.0": {
+        "en": "Make sure adapter enters discovery mode even if an existing device cannot be connected to\nDetect the same device ID under a new IP and adjust the objects accordingly\nAdd connected state for each device and also use it for Admin connection display",
+        "de": "Stellen Sie sicher, dass der Adapter in den Erkennungsmodus wechselt, auch wenn keine Verbindung zu einem vorhandenen Gerät hergestellt werden kann\nGleiche Geräte-ID unter neuer IP erkennen und Objekte entsprechend anpassen\nFügen Sie den Verbindungsstatus für jedes Gerät hinzu und verwenden Sie ihn auch für die Admin-Verbindungsanzeige",
+        "ru": "Убедитесь, что адаптер входит в режим обнаружения, даже если существующее устройство не может быть подключено к\nОбнаружение того же идентификатора устройства под новым IP-адресом и соответствующая настройка объектов\nДобавьте состояние подключения для каждого устройства, а также используйте его для отображения подключения администратора.",
+        "pt": "Certifique-se de que o adaptador entre no modo de descoberta mesmo que um dispositivo existente não possa ser conectado\nDetecte o mesmo ID de dispositivo em um novo IP e ajuste os objetos de acordo\nAdicione o estado conectado para cada dispositivo e também use-o para exibição de conexão do administrador",
+        "nl": "Zorg ervoor dat de adapter in de detectiemodus gaat, zelfs als er geen verbinding kan worden gemaakt met een bestaand apparaat\nDetecteer dezelfde apparaat-ID onder een nieuw IP-adres en pas de objecten dienovereenkomstig aan\nVoeg de verbonden status toe voor elk apparaat en gebruik het ook voor weergave van de beheerdersverbinding",
+        "fr": "Assurez-vous que l'adaptateur entre en mode découverte même si un périphérique existant ne peut pas être connecté à\nDétecter le même ID d'appareil sous une nouvelle IP et ajuster les objets en conséquence\nAjoutez l'état connecté pour chaque appareil et utilisez-le également pour l'affichage de la connexion administrateur",
+        "it": "Assicurati che l'adattatore entri in modalità di rilevamento anche se non è possibile collegare un dispositivo esistente\nRileva lo stesso ID dispositivo con un nuovo IP e regola gli oggetti di conseguenza\nAggiungi lo stato di connessione per ogni dispositivo e utilizzalo anche per la visualizzazione della connessione dell'amministratore",
+        "es": "Asegúrese de que el adaptador ingrese al modo de descubrimiento incluso si no se puede conectar un dispositivo existente\nDetecte el mismo ID de dispositivo bajo una nueva IP y ajuste los objetos en consecuencia\nAgregue el estado conectado para cada dispositivo y utilícelo también para mostrar la conexión del administrador",
+        "pl": "Upewnij się, że adapter przechodzi w tryb wykrywania, nawet jeśli nie można połączyć z istniejącym urządzeniem\nWykryj ten sam identyfikator urządzenia pod nowym adresem IP i odpowiednio dostosuj obiekty\nDodaj stan połączenia dla każdego urządzenia i użyj go również do wyświetlania połączenia administratora",
+        "zh-cn": "确保适配器进入发现模式，即使现有设备无法连接到\n检测新IP下的相同设备ID并相应调整对象\n为每个设备添加连接状态，并将其用于管理连接显示"
+      },
       "1.0.3": {
         "en": "Make sure devices have an id when initializing them",
         "de": "Stellen Sie sicher, dass Geräte beim Initialisieren eine ID haben",
@@ -74,18 +86,6 @@
         "es": "Agregar propiedad de título",
         "pl": "Dodaj właściwość tytułu",
         "zh-cn": "添加标题属性"
-      },
-      "0.1.2": {
-        "en": "Add unit for PH value",
-        "de": "Einheit für PH-Wert hinzufügen",
-        "ru": "Добавить единицу для значения PH",
-        "pt": "Adicionar unidade para valor de PH",
-        "nl": "Eenheid toevoegen voor PH-waarde",
-        "fr": "Ajouter une unité pour la valeur PH",
-        "it": "Aggiungi unità per il valore PH",
-        "es": "Agregar unidad para el valor de PH",
-        "pl": "Dodaj jednostkę dla wartości PH",
-        "zh-cn": "添加PH值单位"
       }
     },
     "title": "PH803-W PH and Redox",
