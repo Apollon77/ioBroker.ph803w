@@ -32,6 +32,10 @@ Please use GitHub issues for this.
 Best is to set the adapter to Debug log mode (Instances -> Expert mode -> Column Log level). Then please get the logfile from disk (subdirectory "log" in ioBroker installation directory and not from Admin because Admin cuts the lines). If you do not like providing it in GitHub issue you can also send it to me via email (iobroker@fischer-ka.de). Please add a reference to the relevant GitHub issue AND also describe what I see in the log at which time.
 
 ## Changelog
+
+### __WORK IN PROGRESS__
+* (Apollon77) Fix potential crash case on the IP-changed detection logic
+
 ### 1.1.0 (2022-05-28)
 * (Apollon77) Make sure adapter enters discovery mode even if an existing device cannot be connected to
 * (Apollon77) Detect the same device ID under a new IP and adjust the objects accordingly

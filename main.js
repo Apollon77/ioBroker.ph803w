@@ -215,7 +215,7 @@ class Ph803w extends utils.Adapter {
                 const otherIpForDevice = this.devices[otherIpForDeviceId];
                 if (otherIpForDevice.isConnected()) {
                     this.log.warn(`Device ${device.id} already known on ${otherIpForDevice.ip} and connected. Ignore this old IP ${device.ip}!`);
-                    this.devices[device.ip].destroy();
+                    this.devices[device.ip] && this.devices[device.ip].destroy();
                     delete this.devices[device.ip];
                 }
             }
