@@ -35,7 +35,7 @@ Best is to set the adapter to Debug log mode (Instances -> Expert mode -> Column
 
 ### __WORK IN PROGRESS__
 * IMPORTANT: The adapter requires at least Node.js 18.x
-* (foxriver76) Fix write flag of redux switch indicator
+* (foxriver76) Fix write flag of redox switch indicator
 
 ### 1.1.1 (2022-06-03)
 * (Apollon77) Fix potential crash case on the IP-changed detection logic
