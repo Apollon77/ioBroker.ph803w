@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "ph803w",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "news": {
+      "1.2.0": {
+        "en": "IMPORTANT: The adapter requires at least Node.js 18.x\nFix write flag of redox switch indicator",
+        "de": "WICHTIG: Der Adapter benötigt mindestens Node.js 18.x\nFestlegen der Schreib-Flagge des Redox-Schalters",
+        "ru": "ВАЖНО: адаптер требует по крайней мере Node.js 18.x\nFix напишите флаг индикатора переключения",
+        "pt": "IMPORTANTE: O adaptador requer pelo menos Node.js 18.x\nCorrigir a bandeira de gravação do indicador de interruptor redox",
+        "nl": "BELANGRIJK: De adapter vereist minstens Node.js 18.x\nFix schrijf vlag van redox switch indicator",
+        "fr": "IMPORTANT: L'adaptateur nécessite au moins Node.js 18.x\nCorrection du drapeau d'écriture de l'indicateur de commutateur redox",
+        "it": "IMPORTANTE: L'adattatore richiede almeno Node.js 18.x\nFissa la bandiera di scrittura di indicatore di interruttore rosso",
+        "es": "IMPORTANTE: El adaptador requiere por lo menos Node.js 18.x\nFija la bandera de redox indicador de cambio",
+        "pl": "WAŻNE: Adapter wymaga co najmniej Node.js 18.x\nNapraw flagę zapisu wskaźnika przełącznika redox",
+        "uk": "IMPORTANT: Адаптер вимагає принаймні Node.js 18.x\nФіксований прапорець перемикача окислів",
+        "zh-cn": "重要:适配器至少需要节点.js 18.x\n修复重排开关指示器的写旗"
+      },
       "1.1.1": {
         "en": "Fix potential crash case on the IP-changed detection logic",
         "de": "Beheben Sie einen potenziellen Absturzfall in der IP-geänderten Erkennungslogik",
@@ -74,18 +87,6 @@
         "es": "Optimice los casos extremos en la conexión del dispositivo e intente volver a conectarse y asegúrese de que el estado de la conexión sea correcto\nManejar mejor las reconexiones relacionadas con pingpong",
         "pl": "Zoptymalizuj przypadki brzegowe na połączeniu urządzenia i spróbuj połączyć się ponownie, aby upewnić się, że stan połączenia jest poprawny\nLepsza obsługa ponownych połączeń związanych z pingpong",
         "zh-cn": "优化设备连接的边缘情况并尝试重新连接并确保连接状态正确\n更好地处理与乒乓相关的重新连接"
-      },
-      "0.1.4": {
-        "en": "Remove unit from PH again after feedback",
-        "de": "Gerät nach Rückmeldung wieder vom PH entfernen",
-        "ru": "Удалите устройство из PH снова после обратной связи",
-        "pt": "Remova a unidade do PH novamente após o feedback",
-        "nl": "Apparaat weer uit PH verwijderen na feedback",
-        "fr": "Retirez à nouveau l'unité de PH après la rétroaction",
-        "it": "Rimuovere di nuovo l'unità da PH dopo il feedback",
-        "es": "Retire la unidad de PH nuevamente después de recibir comentarios",
-        "pl": "Usuń jednostkę z PH ponownie po otrzymaniu informacji zwrotnej",
-        "zh-cn": "反馈后再次从 PH 中移除装置"
       }
     },
     "title": "PH803-W PH and Redox",
