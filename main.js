@@ -57,7 +57,7 @@ const deviceObjects = {
             type: 'boolean',
             role: 'indicator',
             read: true,
-            write: true,
+            write: false,
         }
     },
     'connected': {
