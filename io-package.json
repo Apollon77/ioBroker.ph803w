@@ -123,7 +123,10 @@
       "redox",
       "ph803-w"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
     "platform": "Javascript/Node.js",
     "icon": "ph803w_icon.png",
     "enabled": true,
