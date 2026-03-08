@@ -19,7 +19,7 @@
     "url": "https://github.com/Apollon77/ioBroker.ph803w"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.1.4",
