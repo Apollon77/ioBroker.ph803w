@@ -139,16 +139,18 @@
     "connectionType": "local",
     "tier": 2,
     "dataSource": "push",
-    "materialize": true,
     "dependencies": [
       {
-        "js-controller": ">=3.1.0"
+        "js-controller": ">=6.0.11"
       }
     ],
     "plugins": {
       "sentry": {
         "dsn": "https://fd622d4814134857be33348981e98c4e@sentry.iobroker.net/132"
       }
+    },
+    "adminUI": {
+      "config": "materialize"
     }
   },
   "native": {},
